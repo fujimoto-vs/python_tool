@@ -34,3 +34,20 @@ def get_all_members():
     conn.close()
 
     return rows
+
+
+def update_status(member_id, status):
+
+    conn = get_connection()
+
+    conn.execute(
+        """
+        UPDATE members
+        SET status = ?
+        WHERE id = ?
+        """,
+        (status, member_id)
+    )
+
+    conn.commit()
+    conn.close()
