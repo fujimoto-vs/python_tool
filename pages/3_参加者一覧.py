@@ -6,4 +6,7 @@ st.title("参加者一覧")
 members = get_members()
 
 for member in members:
-    st.write(member)
+
+    st.write(
+        f"{member[1]} : {member[2]}"
+    )
