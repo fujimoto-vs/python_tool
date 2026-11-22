@@ -6,4 +6,10 @@ st.title("参加登録")
 name = st.text_input("名前")
 
 if st.button("登録"):
-    add_member(name)
+
+    if add_member(name):
+        st.success(
+            f"{name}さんを登録しました"
+        )
+    else:
+        st.error("名前を入力してください")
