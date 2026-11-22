@@ -16,3 +16,21 @@ def insert_member(name):
 
     conn.commit()
     conn.close()
+
+
+def get_all_members():
+
+    conn = get_connection()
+
+    cursor = conn.cursor()
+
+    cursor.execute("""
+        SELECT id, name, status
+        FROM members
+    """)
+
+    rows = cursor.fetchall()
+
+    conn.close()
+
+    return rows
