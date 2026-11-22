@@ -64,3 +64,25 @@ def get_all_events():
     conn.close()
 
     return rows
+
+
+def get_event_dates(event_id):
+
+    conn = get_connection()
+
+    cursor = conn.cursor()
+
+    cursor.execute(
+        """
+        SELECT id, candidate_date
+        FROM event_dates
+        WHERE event_id = ?
+        """,
+        (event_id,)
+    )
+
+    rows = cursor.fetchall()
+
+    conn.close()
+
+    return rows
