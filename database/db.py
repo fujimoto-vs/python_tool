@@ -12,10 +12,38 @@ def get_connection():
 def init_db():
     conn = get_connection()
 
+    # 参加者
     conn.execute("""
         CREATE TABLE IF NOT EXISTS members(
             id INTEGER PRIMARY KEY AUTOINCREMENT,
             name TEXT NOT NULL,
+            status TEXT NOT NULL
+        )
+    """)
+
+    # イベント
+    conn.execute("""
+        CREATE TABLE IF NOT EXEISTS events(
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            title TEXT NOT NULL
+        )
+    """)
+
+    # 候補日
+    conn.execute("""
+        CREATE TABLE IF NOT EXEISTS event_data(
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            event_id INTEGER NOT NULL,
+            candidate_date TEXT NOT NULL
+        )
+    """)
+
+    # 投票
+    conn.execute("""
+        CREATE TABLE IF NOT EXEISTS votes(
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            member_id INTEGER NOT NULL,
+            data_id INTEGER NOT NULL,
             status TEXT NOT NULL
         )
     """)
