@@ -50,8 +50,13 @@ date10 = st.date_input(
 
 if st.button("イベント作成"):
 
-    if add_event(title):
-        st.success(f"{title}を作成しました")
-
+    if add_event(
+        title,
+        [date1, date2, date3, date4, date5, date6, date7, date8, date9, date10]
+    ):
+        st.success(
+            "イベントを作成しました"
+        )
+        
     else:
         st.error("イベント名を入力してください")
