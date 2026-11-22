@@ -1,6 +1,8 @@
 from database.event_repository import (
     insert_event,
-    insert_event_date
+    insert_event_date,
+    get_all_events,
+    get_event_dates
 )
 
 
@@ -23,3 +25,11 @@ def add_event(
         )
 
     return True
+
+
+def get_events():
+    return get_all_events()
+
+
+def get_dates(event_id):
+    return get_event_dates(event_id)
