@@ -10,7 +10,7 @@ if not members:
 
 else:
     for member in members:
-        id, name, status = members
+        id, name, status = member
 
         st.write(
             f"名前:{name} 状態:{status}"
