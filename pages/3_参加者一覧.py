@@ -6,10 +6,12 @@ st.title("参加者一覧")
 members = get_members()
 
 if not members:
-    st.info("参加者がいません")
+    st.info("参加者が登録されていません")
 
 else:
-    for id, name, status in members:
+    for member in members:
+        id, name, status = members
+
         st.write(
-            f"{name} : {status}"
+            f"名前:{name} 状態:{status}"
         )
