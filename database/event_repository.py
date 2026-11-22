@@ -46,3 +46,21 @@ def insert_event_date(
 
     conn.commit()
     conn.close()
+
+
+def get_all_events():
+
+    conn = get_connection()
+
+    cursor = conn.cursor()
+
+    cursor.execute("""
+        SELECT id, title
+        FROM events
+    """)
+
+    rows = cursor.fetchall()
+
+    conn.close()
+
+    return rows
