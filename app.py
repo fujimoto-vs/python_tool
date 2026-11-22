@@ -5,9 +5,10 @@ init_db()
 
 st.set_page_config(
     page_title = "飲み会出欠管理",
+    page_icon="🍺",
     layout = "wide"
 )
 
 st.title("飲み会出欠管理")
 
-st.write("左のメニューから選択してください")
+st.sidebar.success("左のメニューから選択してください")
