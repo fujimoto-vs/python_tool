@@ -23,7 +23,7 @@ def init_db():
 
     # イベント
     conn.execute("""
-        CREATE TABLE IF NOT EXEISTS events(
+        CREATE TABLE IF NOT EXISTS events(
             id INTEGER PRIMARY KEY AUTOINCREMENT,
             title TEXT NOT NULL
         )
@@ -31,7 +31,7 @@ def init_db():
 
     # 候補日
     conn.execute("""
-        CREATE TABLE IF NOT EXEISTS event_data(
+        CREATE TABLE IF NOT EXISTS event_data(
             id INTEGER PRIMARY KEY AUTOINCREMENT,
             event_id INTEGER NOT NULL,
             candidate_date TEXT NOT NULL
@@ -40,7 +40,7 @@ def init_db():
 
     # 投票
     conn.execute("""
-        CREATE TABLE IF NOT EXEISTS votes(
+        CREATE TABLE IF NOT EXISTS votes(
             id INTEGER PRIMARY KEY AUTOINCREMENT,
             member_id INTEGER NOT NULL,
             data_id INTEGER NOT NULL,
