@@ -1,0 +1,13 @@
+# Pythonの一時ファイル
+__pycache__/
+*.py[cod]
+
+# uvの仮想環境
+.venv/
+
+# VScodeの設定
+.vscode/
+
+# OSの不要ファイル
+.DS_Store
+Thumbs.db
