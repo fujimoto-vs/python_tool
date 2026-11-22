@@ -31,7 +31,7 @@ def init_db():
 
     # 候補日
     conn.execute("""
-        CREATE TABLE IF NOT EXISTS event_data(
+        CREATE TABLE IF NOT EXISTS event_dates(
             id INTEGER PRIMARY KEY AUTOINCREMENT,
             event_id INTEGER NOT NULL,
             candidate_date TEXT NOT NULL
